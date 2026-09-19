@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy &mdash; Huginn &amp; Muninn</title>
+<meta name="description" content="How the Huginn &amp; Muninn personal daily-briefing app handles Google user data.">
+<style>
+  :root {
+    --bg: #14100d;
+    --ink: #f2e9e1;
+    --ink-dim: #a99687;
+    --accent: #c87a4a;
+    --hairline: rgba(242, 233, 225, .12);
+    --code: rgba(242, 233, 225, .08);
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #faf6f2;
+      --ink: #241c16;
+      --ink-dim: #6d5c4e;
+      --accent: #a85f2f;
+      --hairline: rgba(36, 28, 22, .14);
+      --code: rgba(36, 28, 22, .07);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 34rem; margin: 0 auto; padding: 4rem 1rem; }
+  h1 { font-size: 1.8rem; line-height: 1.2; margin: 0; letter-spacing: -.01em; }
+  .sub { color: var(--ink-dim); margin: .5rem 0 0; font-size: .92rem; }
+  h2 { font-size: 1.05rem; margin: 2.25rem 0 .5rem; }
+  p { margin: 0 0 1rem; }
+  a { color: var(--accent); }
+  code {
+    background: var(--code); border-radius: 4px;
+    padding: .1em .35em; font-size: .9em;
+  }
+  footer {
+    margin-top: 3rem; padding-top: 1.25rem;
+    border-top: 1px solid var(--hairline);
+    color: var(--ink-dim); font-size: .9rem;
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Privacy Policy</h1>
+  <p class="sub">Huginn &amp; Muninn &middot; Last updated 19 September 2026</p>
+
+  <h2>What this application is</h2>
+  <p>Huginn &amp; Muninn is a personal daily-briefing and reminder system built and
+  operated by Michael Elrod for his own use. It has one user: the developer. There is no
+  sign-up, no account system, and it is not distributed through any app store or offered
+  to the public.</p>
+
+  <h2>What Google data it accesses</h2>
+  <p>The application requests a single, read-only Google scope:
+  <code>calendar.readonly</code>. Once a day it reads the events on the developer's own
+  primary Google Calendar for that day, and uses the event title, start time and all-day
+  flag to compose a briefing.</p>
+  <p>It never writes to, modifies or deletes calendar data, and it reads no other Google
+  product.</p>
+
+  <h2>How that data is stored</h2>
+  <p>The assembled briefing is written to a DynamoDB table in the developer's own private
+  AWS account. It is stored as a single record that is overwritten every morning, so no
+  history accumulates and the previous day's briefing is not retained. OAuth credentials
+  are held encrypted in AWS Systems Manager Parameter Store as SecureString parameters.
+  The application's HTTP API is reachable only with a bearer token known to the
+  developer.</p>
+
+  <h2>How that data is used and shared</h2>
+  <p>Calendar data is used for exactly one purpose: displaying the developer's own daily
+  briefing in his own phone application and home-screen widget.</p>
+  <p>It is not sold, rented or shared with any third party. It is not used for
+  advertising, analytics, profiling or credit assessment, and it is not used to train any
+  machine-learning or AI model. No human other than the developer reads it.</p>
+  <p>Huginn &amp; Muninn's use of information received from Google APIs adheres to the
+  <a href="https://developers.google.com/terms/api-services-user-data-policy"
+     target="_blank" rel="noopener noreferrer">Google API Services User Data Policy</a>,
+  including the Limited Use requirements.</p>
+
+  <h2>Retention and revocation</h2>
+  <p>The stored briefing is replaced daily. Access can be withdrawn at any time from
+  <a href="https://myaccount.google.com/permissions"
+     target="_blank" rel="noopener noreferrer">Google Account permissions</a>, which
+  immediately and permanently revokes the application's ability to read any calendar
+  data.</p>
+
+  <h2>Contact</h2>
+  <p>Questions about this policy can be sent to
+  <a href="mailto:elrod.michael95@gmail.com">elrod.michael95@gmail.com</a>.</p>
+
+  <footer><a href="/">&larr; Huginn &amp; Muninn</a></footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Huginn &amp; Muninn</title>
+<meta name="description" content="A personal daily-briefing and reminder system. One user, one phone, no sign-up.">
+<style>
+  :root {
+    --bg: #14100d;
+    --ink: #f2e9e1;
+    --ink-dim: #a99687;
+    --accent: #c87a4a;
+    --hairline: rgba(242, 233, 225, .12);
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #faf6f2;
+      --ink: #241c16;
+      --ink-dim: #6d5c4e;
+      --accent: #a85f2f;
+      --hairline: rgba(36, 28, 22, .14);
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 34rem; margin: 0 auto; padding: 5rem 1rem 4rem; }
+  h1 { font-size: 1.9rem; line-height: 1.2; margin: 0; letter-spacing: -.01em; }
+  .sub { color: var(--ink-dim); margin: .5rem 0 0; }
+  h2 { font-size: 1.05rem; margin: 2.5rem 0 .5rem; }
+  p { margin: 0 0 1rem; }
+  ul { margin: 0 0 1rem; padding-left: 1.1rem; }
+  li { margin-bottom: .35rem; }
+  a { color: var(--accent); }
+  footer {
+    margin-top: 3rem; padding-top: 1.25rem;
+    border-top: 1px solid var(--hairline);
+    color: var(--ink-dim); font-size: .9rem;
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Huginn &amp; Muninn</h1>
+  <p class="sub">A personal daily-briefing and reminder system.</p>
+
+  <p>Named for Odin's ravens: <strong>Huginn</strong> (thought) flies out every morning,
+  gathers the day from a handful of sources, and reports back. <strong>Muninn</strong>
+  (memory) keeps the reminders and fires them.</p>
+
+  <h2>What it does</h2>
+  <p>Once each morning it assembles a single briefing &mdash; the weather, the day's
+  calendar events, upcoming countdowns and any reminders due &mdash; and sends it to one
+  Android phone as a notification and a home-screen widget.</p>
+
+  <h2>Who it is for</h2>
+  <p>One person: the developer. There is no sign-up, no account system, and no public
+  distribution. It is a personal project, not a product.</p>
+
+  <ul>
+    <li>Read-only access to a single Google Calendar</li>
+    <li>No report history &mdash; each morning overwrites the last</li>
+    <li>No data shared with anyone</li>
+  </ul>
+
+  <footer>
+    <a href="/privacy/">Privacy policy</a> &middot;
+    <a href="mailto:elrod.michael95@gmail.com">elrod.michael95@gmail.com</a>
+  </footer>
+</main>
+</body>
+</html>
